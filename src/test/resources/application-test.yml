@@ -1,0 +1,23 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  liquibase:
+    change-log: classpath:db/changelog/changelog.sql
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    user: sa
+    password:
+    default-schema: public
+
+logging:
+  level:
+    root: info
+    com.company.userservice: debug # error, warn, none, info, debug, trace
+    org.springframework.jdbc.core.JdbcTemplate: debug
+

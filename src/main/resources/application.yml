@@ -1,0 +1,25 @@
+server:
+  port: 9000
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql:postgres
+    username: dba
+    password: dba
+  liquibase:
+    change-log: classpath:db/changelog/changelog.sql
+    url: jdbc:postgresql:postgres
+    user: dba
+    password: dba
+
+logging:
+  level:
+    root: info
+    com.company.userservice: debug # error, warn, none, info, debug, trace
+    org.springframework.jdbc.core.JdbcTemplate: debug
+
